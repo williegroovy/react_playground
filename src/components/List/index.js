@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledList, StyledRow, StyledRowSegment, StyledQtyButton } from './styled-components';
 
-const List = ({ items, updateQty, children }) => {
+const List = ({ items, handleUpdateQty, children }) => {
   return(
     <StyledList>
       <StyledRow key="titleRow">
@@ -14,9 +14,9 @@ const List = ({ items, updateQty, children }) => {
           <StyledRow key={curr.id}>
             <StyledRowSegment width={40}>{curr.name}</StyledRowSegment>
             <StyledRowSegment align="true" width={40}>
-              <StyledQtyButton type="button" left="true" onClick={() => updateQty(curr.id, 'sub')}>-</StyledQtyButton>
+              <StyledQtyButton left="true" onClick={() => handleUpdateQty(curr.id, 'sub')}>-</StyledQtyButton>
               {curr.qty}
-              <StyledQtyButton type="button" right="true" onClick={() => updateQty(curr.id, 'add')}>+</StyledQtyButton>
+              <StyledQtyButton right="true" onClick={() => handleUpdateQty(curr.id, 'add')}>+</StyledQtyButton>
             </StyledRowSegment>
             <StyledRowSegment align="right" width={20}>${curr.price}</StyledRowSegment>
           </StyledRow>

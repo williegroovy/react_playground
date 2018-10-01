@@ -36,7 +36,7 @@ class Checkout extends React.Component {
 
   calculateTotal = (cartItems) => cartItems.reduce((accum, curr) => (accum + curr.price * curr.qty), 0);
 
-  updateQty = (id, action) => {
+  onUpdateQty = (id, action) => {
     const { cartItems } = this.state;
     const updatedCartItems = cartItems.map((curr) => {
       const qty = (curr.id === id
@@ -64,7 +64,7 @@ class Checkout extends React.Component {
     return (
       <CheckoutContainer>
         <CartContainer>
-          <List items={cartItems} updateQty={this.updateQty}>
+          <List items={cartItems} handleUpdateQty={this.onUpdateQty}>
             <Total amount={total} align={'right'} />
           </List>
         </CartContainer>

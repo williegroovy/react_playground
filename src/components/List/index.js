@@ -10,7 +10,7 @@ const List = ({ items, handleUpdateQty, children }) => {
         <StyledRowSegment title="true" align="right" width={20}>Price</StyledRowSegment>
       </StyledRow>
       {
-        items.map(curr =>
+        items && items.map(curr =>
           <StyledRow key={curr.id}>
             <StyledRowSegment width={40}>{curr.name}</StyledRowSegment>
             <StyledRowSegment align="true" width={40}>

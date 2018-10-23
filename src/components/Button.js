@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const SButton = styled.button`
   font-family: quicksand;
   font-size: ${({ block }) => block ? 20 : 16 }px;
   width: 100px;
+  height: 28px;
   font-weight: 500;
   background: #6bada7;
   border-radius: 4px;
@@ -14,7 +16,7 @@ const SButton = styled.button`
   padding: 5px 15px 5px 15px;
   
   &:hover {
-    animation: popAnimation 0.8s ease;
+    ${({ animated }) => animated && 'animation: popAnimation 0.8s ease'};
   };
   
   &:focus {
@@ -32,17 +34,29 @@ const SButton = styled.button`
   }
 `;
 
-const Button = ({ children, type, click = false, disabled }) => {
+const Button = ({ children, type='button', onClick=false, disabled=false, animated=false }) => {
   return (
     <SButton
       type={type}
-      onClick={() => click && click()}
-      disabled={disabled}
+      onClick={() => onClick && onClick()}
+      animated={animated && !disabled}
+      disabled
     >
       {children}
     </SButton>
 
   )
+};
+
+Button.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string
+  ]).isRequired,
+  type: PropTypes.oneOf(['button', 'rest', 'submit']),
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+  animated: PropTypes.bool
 };
 
 export default Button;

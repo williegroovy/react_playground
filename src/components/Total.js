@@ -23,7 +23,7 @@ Total.propTypes = {
   amount: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
-  ])
+  ]).isRequired
 };
 
 export default Total;

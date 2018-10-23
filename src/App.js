@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home';
 import StepperDemo from './views/StepperDemo';
 import MemoryGame from './views/MemoryGame';
-import Checkout from './views/Checkout/index';
-import DragAndDrop from './views/DragAndDrop/DragAndDrop';
+import Checkout from './views/Checkout';
+import DragAndDrop from './views/DragAndDrop';
+import Dynamic  from './views/Dymaic';
+import Preview from './views/Preview';
 
 import './injectGlobalStyles';
 
@@ -18,6 +20,8 @@ class App extends Component {
           <Route path="/memory" component={MemoryGame} />
           <Route path="/cart" component={Checkout} />
           <Route path="/dnd" component={DragAndDrop} />
+          <Route path="/dynamic" component={Dynamic} />
+          <Route path="/preview" component={Preview} />
         </Switch>
       </Router>
     );

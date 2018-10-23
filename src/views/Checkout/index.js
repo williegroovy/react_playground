@@ -64,7 +64,14 @@ class Checkout extends React.Component {
     return (
       <CheckoutContainer>
         <CartContainer>
-          <List items={cartItems} handleUpdateQty={this.onUpdateQty}>
+          <List handleUpdateQty={this.onUpdateQty}>
+            { cartItems.map((curr) => (
+              <div>
+                <p>{curr.name}</p>
+                <p>{curr.qty}</p>
+                <p>{curr.price}</p>
+              </div>
+            ))}
             <Total amount={total} align={'right'} />
           </List>
         </CartContainer>

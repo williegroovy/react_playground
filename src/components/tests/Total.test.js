@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import 'jest-styled-components';
-
 import Total from '../Total'
 
 describe('<Total />', () => {

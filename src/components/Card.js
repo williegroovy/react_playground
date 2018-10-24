@@ -13,11 +13,11 @@ const StyledCard = styled.div`
   align-items: center;
 `;
 
-const Card = ({ face }) => {
+const Card = ({ children, face }) => {
 
   return (
     <StyledCard>
-      { face }
+      {[face, children]}
     </StyledCard>
   );
 };

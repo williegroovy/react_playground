@@ -7,6 +7,8 @@ import Checkout from './views/Checkout';
 import DragAndDrop from './views/DragAndDrop';
 import Dynamic  from './views/Dymaic';
 import Preview from './views/Preview';
+import Proper from './views/Proper';
+import ExplainWhy from './views/ExplainWhy';
 
 import './injectGlobalStyles';
 
@@ -22,6 +24,8 @@ class App extends Component {
           <Route path="/dnd" component={DragAndDrop} />
           <Route path="/dynamic" component={Dynamic} />
           <Route path="/preview" component={Preview} />
+          <Route path="/proper" component={Proper} />
+          <Route path="/explainwhy" component={ExplainWhy} />
         </Switch>
       </Router>
     );

@@ -34,7 +34,7 @@ const SButton = styled.button`
   }
 `;
 
-const Button = ({ children, type='button', onClick=false, disabled=false, animated=false }) => {
+const Button = ({ children, type='button', onClick, disabled, animated }) => {
   return (
     <SButton
       type={type}
@@ -46,6 +46,13 @@ const Button = ({ children, type='button', onClick=false, disabled=false, animat
     </SButton>
 
   )
+};
+
+Button.defaultProps = {
+  type: 'button',
+  onClick: false,
+  disabled: false,
+  animated: false
 };
 
 Button.propTypes = {

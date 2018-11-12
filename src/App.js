@@ -8,7 +8,7 @@ import DragAndDrop from './views/DragAndDrop';
 import Dynamic  from './views/Dymaic';
 import Preview from './views/Preview';
 import Proper from './views/Proper';
-import ExplainWhy from './views/ExplainWhy';
+import ExplainWhy from './views/ExplainWhy/ExplainWhy';
 
 import './injectGlobalStyles';
 

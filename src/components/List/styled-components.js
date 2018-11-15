@@ -10,7 +10,7 @@ export const StyledList = styled.div`
 
 export const StyledRow = styled.div`
   display: flex;
-  flex-direction: row:
+  flex-direction: row;
 `;
 
 export const StyledRowSegment = styled(StyledFlexAlign)`
@@ -31,7 +31,7 @@ export const StyledRowSegment = styled(StyledFlexAlign)`
 export const StyledQtyButton = styled.button`
   height: 24px;
   width: 24px;
-  font-family: helvetica;
+  font-family: sans-serif helvetica;
   font-size: 18px;
   text-align: center;
   color: ${({ right }) => right ? 'green' : 'red'};

@@ -1,7 +1,7 @@
 import React from 'react';
 import Builder, { DecisionTreeBuilder, DecisionTreeWithHistoryBuilder, testConfig } from '../utils/decisionTree';
 
-const DecisionTree2 = () => {
+const DecisionTree = () => {
 
 
   const treeWithoutHistory = Builder.build(DecisionTreeBuilder, testConfig);
@@ -16,4 +16,4 @@ const DecisionTree2 = () => {
 };
 
 
-export default DecisionTree2;
+export default DecisionTree;

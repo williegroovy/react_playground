@@ -12,7 +12,7 @@ const fetchConfig = () => {
   })
 };
 
-class Proper extends React.Component {
+class CMS extends React.Component {
   state = {
     title: '',
     menu: {},
@@ -58,4 +58,4 @@ class Proper extends React.Component {
   }
 }
 
-export default Proper;
+export default CMS;

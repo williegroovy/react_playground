@@ -1,6 +1,7 @@
 import React from 'react'
 import shortid from 'shortid';
 
+import Proper from '../Proper';
 import List from '../../components/List/index'
 import Total from '../../components/Total';
 import { CheckoutContainer, CartContainer } from "./styled-components";
@@ -80,4 +81,4 @@ class Checkout extends React.Component {
   }
 }
 
-export default Checkout
+export default Checkout;

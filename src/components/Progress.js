@@ -11,7 +11,7 @@ const StyledProgressContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: calc(100% - 20px);
+  height: calc(100% - 30px);
   background: white;
   border: 2px solid #ccc;
   border-radius: 8px;
@@ -54,7 +54,11 @@ const renderIcon = (stage, num) => {
   return <img className="animated fadeIn" style={{ width: '12px' }} src={checked} />
 };
 
-export const Stage = ({ stage, num }) => <StyledCircle>{renderIcon(stage, num)}</StyledCircle>;
+export const Stage = ({ stage, num }) => (
+  <StyledCircle current={stage} circleSection={num}>
+    {renderIcon(stage, num)}
+  </StyledCircle>
+);
 
 
 const Progress = ({ children }) => (

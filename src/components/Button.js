@@ -6,7 +6,6 @@ const SButton = styled.button`
   font-family: quicksand;
   font-size: ${({ block }) => block ? 20 : 16 }px;
   width: 100px;
-  height: 28px;
   font-weight: 500;
   background: #6bada7;
   border-radius: 4px;
@@ -23,30 +22,27 @@ const SButton = styled.button`
     outline: none;
   }
   
-  &:disabled {
-    background: #ccc,
-    color: white
-    cursor: not-allowed
-  }
+  ${({ disabled }) => disabled && `
+    background: #ccc;
+    color: white;
+    cursor: not-allowed;
+  `};
   
   @keyframes popAnimation {
     50% { transform: scale(1.2)  }
   }
 `;
 
-const Button = ({ children, type='button', onClick, disabled, animated }) => {
-  return (
+const Button = ({ children, type='button', onClick, disabled, animated }) => (
     <SButton
       type={type}
       onClick={() => onClick && onClick()}
       animated={animated && !disabled}
-      disabled
+      disabled={disabled}
     >
       {children}
     </SButton>
-
-  )
-};
+  );
 
 Button.defaultProps = {
   type: 'button',

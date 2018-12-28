@@ -1,0 +1,25 @@
+{
+  "title": "Hey babe!",
+  "menu": {
+    "Home" : {
+      "type": "text",
+      "action": ""
+    },
+    "About": {
+      "type": "text",
+      "action": ""
+    },
+    "Sign Up": {
+      "type": "button",
+      "action": ""
+    }
+  },
+  "images": {
+    "hero": "https://s3-us-west-1.amazonaws.com/configuration-state/hero-image-abstract.jpg",
+    "digitalWrap": "https://s3-us-west-1.amazonaws.com/configuration-state/digital-rainbow-wrap.png",
+    "rainbows": "https://s3-us-west-1.amazonaws.com/configuration-state/rectangles.png",
+    "purpleGlitter": "https://s3-us-west-1.amazonaws.com/configuration-state/purple-glitter.png",
+    "lookRight": "https://s3-us-west-1.amazonaws.com/configuration-state/look_right_hero.jpg"
+  },
+  "pikachu": "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png"
+}

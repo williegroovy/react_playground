@@ -1,3 +1,3 @@
-import Stepper from './Stepper';
+import Navigation from './Navigation';
 
-export default Stepper;
+export default Navigation;

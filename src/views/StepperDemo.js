@@ -1,28 +1,25 @@
 import React from 'react';
+import Navigation from '../components/Stepper/Navigation';
 import Stepper from '../components/Stepper';
 
 const StepperDemo = () => {
   return(
-    <Stepper initialStage={1}>
-      {(stage, onNavigate) => (
-        <React.Fragment>
-          <Stepper.Progress>
-            <Stepper.Stage stage={stage} num={1} />
-            <Stepper.Stage stage={stage} num={2} />
-            <Stepper.Stage stage={stage} num={3} />
-          </Stepper.Progress>
-          <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-            <Stepper.Header title="Stepper Header" />
-            <Stepper.Steps stage={stage} navigate={onNavigate}>
-              <Stepper.Step stage={stage} num={1} id={1} text="Stage 1" />
-              <Stepper.Step stage={stage} num={2} id={2} text="Stage 2" />
-              <Stepper.Step stage={stage} num={3} id={3} text="Stage 3" />
-            </Stepper.Steps>
-            <Stepper.Footer title="Stepper Footer" />
-          </div>
-        </React.Fragment>
-      )}
-    </Stepper>
+    <Navigation>
+        <Navigation.Progress>
+          <Navigation.Stage num={1} />
+          <Navigation.Stage num={2} />
+          <Navigation.Stage num={3} />
+        </Navigation.Progress>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+          <Navigation.Header title="Stepper Header" />
+          <Navigation.Steps>
+            <Navigation.Step num={1} component="Stage 1" />
+            <Navigation.Step num={2} component="Stage 2" />
+            <Navigation.Step num={3} component="Stage 3" />
+          </Navigation.Steps>
+          <Navigation.Footer title="Stepper Footer" />
+        </div>
+    </Navigation>
   );
 };
 

@@ -6,6 +6,7 @@ import GlobalStyle from './createGlobalStyles';
 
 const AsyncHome = Loadable({ loader: () => import('./views/Home'), loading: LoadingComponent });
 const AsyncStepperDemo = Loadable({ loader: () => import('./views/StepperDemo'), loading: LoadingComponent });
+const AsyncStepNavigationDemo = Loadable({ loader: () => import('./views/StepNavigationDemo'), loading: LoadingComponent });
 const AsyncMemoryGame = Loadable({ loader: () => import('./views/MemoryGame'), loading: LoadingComponent });
 const AsyncCheckout = Loadable({ loader: () => import('./views/Checkout'), loading: LoadingComponent });
 const AsyncDragAndDrop = Loadable({ loader: () => import('./views/DragAndDrop'), loading: LoadingComponent });
@@ -25,6 +26,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={AsyncHome} />
             <Route path="/stepper" component={AsyncStepperDemo} />
+            <Route path="/stepNavigation" component={AsyncStepNavigationDemo} />
             <Route path="/memory" component={AsyncMemoryGame} />
             <Route path="/cart" component={AsyncCheckout} />
             <Route path="/dnd" component={AsyncDragAndDrop} />

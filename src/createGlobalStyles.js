@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
   
   .animated {
     animation-fill-mode: both;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
   }
   
   @keyframes fadeIn {

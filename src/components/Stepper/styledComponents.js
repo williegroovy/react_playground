@@ -76,3 +76,39 @@ export const StyledButtonStageContainer = styled.div`
   padding: 0 10px;
   margin: 20px 10px 10px 0;
 `;
+
+export const StyledProgressContainer = styled.div`
+  display: flex;
+  width: 100px;
+  margin: 15px 0px 15px 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100% - 30px);
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+`;
+
+export const StyledCircle = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  width: ${({ current, circleSection }) => current === circleSection ? '50px' : '30px'};
+  height: ${({ current, circleSection }) => current === circleSection ? '50px' : '30px'};
+  background: white;
+  border-radius: 40px;
+  border: ${({ current, circleSection }) => current > circleSection ? '3px solid #6bada7' : '3px solid #ccc' };
+  z-index: 3;
+  position: relative;
+`;
+
+export const StyledIconImage = styled.img`
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 15px;
+`;

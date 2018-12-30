@@ -1,29 +1,32 @@
 import React from 'react';
 import Button from '../Button';
-import { StepperContext } from './Stepper';
-import { StyledStageContainer, StyledStage, StyledButtonStageContainer } from './styledComponents';
+import {
+  StyledStageContainer,
+  StyledStage,
+  StyledButtonStageContainer
+} from './styledComponents';
 
-const Steps = ({ stage, navigate, registerStageList, children }) => {
+import NavigationContext from './NavigationContext';
 
-  //registerStageList(React.Children.map(children, child => child.props.id, this));
-
-  return (
-    <StyledStageContainer>
-      <StyledStage>
-        {children}
-      </StyledStage>
-      <StyledButtonStageContainer>
-        <Button disabled={stage === 1} onClick={() => navigate('back')} animated>Back</Button>
-        <Button disabled={stage === 4} onClick={() => navigate('forward')} animated>Continue</Button>
-      </StyledButtonStageContainer>
-    </StyledStageContainer>
-  );
-};
+const Steps = ({ children }) => (
+  <NavigationContext.Consumer>
+    {
+      ({ currentNavigationId, onBeforeTransition: navigate }) => (
+        <StyledStageContainer>
+          <StyledStage>
+            {
+              React.Children.map(children, (child) => React.cloneElement(child, { currentNavigationId }, child.children), this)
+            }
+          </StyledStage>
+          <StyledButtonStageContainer>
+            <Button disabled={currentNavigationId === 1} onClick={() => navigate('back')} animated>Back</Button>
+            <Button disabled={currentNavigationId === 4} onClick={() => navigate('forward')} animated>Continue</Button>
+         </StyledButtonStageContainer>
+       </StyledStageContainer>
+     )
+    }
+  </NavigationContext.Consumer>
+);
 
 export default Steps;
 
-/*
-  Issue in this component with a render not a function / multiple children error message.
-  <StepperContext.Consumer>
-  </StepperContext.Consumer>
- */

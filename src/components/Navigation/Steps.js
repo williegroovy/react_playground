@@ -15,12 +15,13 @@ const Steps = ({ children }) => (
         <StyledStageContainer>
           <StyledStage>
             {
-              React.Children.map(children, (child) => React.cloneElement(child, { currentNavigationId }, child.children), this)
+              React.Children.map(children, (child) =>
+                React.cloneElement(child, { currentNavigationId },  child.props.children), this)
             }
           </StyledStage>
           <StyledButtonStageContainer>
             <Button disabled={currentNavigationId === 1} onClick={() => navigate('back')} animated>Back</Button>
-            <Button disabled={currentNavigationId === 4} onClick={() => navigate('forward')} animated>Continue</Button>
+            <Button disabled={currentNavigationId === 3} onClick={() => navigate('forward')} animated>Continue</Button>
          </StyledButtonStageContainer>
        </StyledStageContainer>
      )

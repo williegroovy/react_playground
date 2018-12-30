@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import NavigationContext from './NavigationContext';
-import Progress, { Stage } from './Progress';
+import Progress from './Progress';
 import Steps from './Steps';
 import Step from './Step';
-import { StyledFooter, StyledHeader } from './styledComponents';
+import Stage from './Stage';
+import { StyledFooter, StyledHeader, StyledNavigationContainer } from './styledComponents';
 
 const Header = ({ title }) => (<StyledHeader>{title}</StyledHeader>);
 const Footer = ({ title }) => (<StyledFooter>{title}</StyledFooter>);
@@ -54,7 +55,9 @@ class Navigation extends Component {
   render() {
     return(
       <NavigationContext.Provider value={this.state}>
-        { this.props.children }
+        <StyledNavigationContainer>
+          { this.props.children }
+        </StyledNavigationContainer>
       </NavigationContext.Provider>
     );
   }

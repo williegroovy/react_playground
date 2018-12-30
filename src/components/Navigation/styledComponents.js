@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledStepperContainer = styled.div`
+export const StyledNavigationContainer = styled.div`
  width: calc(100% - 20px);
  height: calc(100% - 20px);
  display: flex;

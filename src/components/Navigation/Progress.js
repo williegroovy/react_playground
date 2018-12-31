@@ -6,13 +6,13 @@ import { isChildFunction } from '../../utils/componentHelpers';
 const Progress = ({ children }) => (
   <NavigationContext.Consumer>
     {
-      ({ currentNavigationId }) => (
+      ({ currentNavigationId, transition }) => (
         isChildFunction(children)
           ? children(currentNavigationId)
           : <StyledProgressContainer>
             {
               React.Children.map(children, (child) =>
-                React.cloneElement(child, { currentNavigationId }, child.props.children), this)
+                React.cloneElement(child, { currentNavigationId, transition }, child.props.children), this)
             }
             </StyledProgressContainer>
       )

@@ -4,7 +4,7 @@ import { StyledStageContent } from './styledComponents';
 import { isChildFunction, hasChildrenToRender, shouldRenderCurrent } from '../../utils/componentHelpers';
 
 const Step = (props) => {
-  const { currentNavigationId, navigationId, component, render, children } = props;
+  const { currentNavigationId, navigationId, transition, component, render, children } = props;
   const shouldRender = shouldRenderCurrent(currentNavigationId, navigationId);
 
   if (component) {
@@ -17,13 +17,13 @@ const Step = (props) => {
 
   if (render) {
     return shouldRender
-      ? render(props)
+      ? render(navigationId, currentNavigationId, transition)
       : null;
   }
 
   if (isChildFunction(children)) {
     return shouldRender
-      ? children(props)
+      ? children(navigationId, currentNavigationId, transition)
       : null;
   }
 

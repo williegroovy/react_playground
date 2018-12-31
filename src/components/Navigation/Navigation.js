@@ -21,23 +21,28 @@ class Navigation extends Component {
   shouldGrandChildAugmentProps = (childType) => (childType === Step || childType === Stage);
 
   transition = (direction) => {
+    if(typeof this.onBeforeTransition === 'function') {
+      const shouldContinue = this.onBeforeTransition.call(this) || false;
+      if(shouldContinue) return;
+    }
+
     if(direction === 'forward') {
       this.setState({ currentNavigationId: this.state.currentNavigationId + 1 });
     } else if(direction === 'back') {
       this.setState({ currentNavigationId: this.state.currentNavigationId - 1 });
     }
-  };
 
-  onBeforeTransition = (direction, callback) => {
-    if(typeof callback === 'function') {
-      callback(direction);
-    }
-    this.transition(direction);
     this.resetCustomProperties();
   };
 
+  onBeforeTransition = null;
+
+  setOnBeforeTransition = (onBeforeTransition) => {
+    this.onBeforeTransition = onBeforeTransition;
+  };
+
   resetCustomProperties = () => {
-    this.setState({ onBeforeTransition: this.onBeforeTransition });
+    this.onBeforeTransition = null;
   } ;
 
   registerNavigationSequence = (stageList) => {
@@ -49,7 +54,8 @@ class Navigation extends Component {
     onRegisterNavigationSequence: this.registerNavigationSequence,
     navigationSequenceRegistered: false,
     currentNavigationId: 1,
-    onBeforeTransition: this.onBeforeTransition
+    setOnBeforeTransition: this.setOnBeforeTransition,
+    transition: this.transition
   };
 
   render() {

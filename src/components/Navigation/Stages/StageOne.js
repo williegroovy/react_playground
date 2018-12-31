@@ -1,4 +1,5 @@
 import React from 'react';
+import withCustomTransition from '../withCustomTransition';
 
 const StageOne = () => (
   <div>
@@ -6,4 +7,4 @@ const StageOne = () => (
   </div>
 );
 
-export default StageOne;
+export default withCustomTransition(() => console.log('Custom Nav From S1'))(StageOne);

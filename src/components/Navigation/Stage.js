@@ -7,7 +7,7 @@ import { StyledCircle, StyledIconImage } from './styledComponents';
 import { hasChildrenToRender, isChildFunction, shouldRenderCurrent } from "../../utils/componentHelpers";
 
 const HourGlassIcon = <HourGlass style={{ animationDuration: 0 }} size="30px" />;
-const LockedIcon = (text) => <div><StyledIconImage src={padlock} />{text}</div>
+const LockedIcon = (text) => <div><StyledIconImage src={padlock} />{text}</div>;
 const CheckIcon = <img className="animated fadeIn" style={{ width: '12px'}} src={checked} />;
 
 const getIconToRender = (inProgress, completed, inProgressIcon, completedIcon, lockedIcon) => {
@@ -21,38 +21,45 @@ const getIconToRender = (inProgress, completed, inProgressIcon, completedIcon, l
     return lockedIcon;
 };
 
+/*
+* Not sure that forcing a lock icons is great.
+* Should allow for no-locked Stages to jump to that stage.
+* Would need to pass down navigate for that to work.
+* In the case of a custom component/function as child, user would need the navigate method passed.
+*
+ */
 const Stage = (props) => {
   const {
-    currentNavigationId, navigationId, text,
+    currentNavigationId, navigationId, text, transition,
     customInProgressIcon, customCompletedIcon, customLockedIcon,
     component, render, children
   } = props;
+
   const shouldRender = shouldRenderCurrent(currentNavigationId, navigationId);
   const completed = currentNavigationId > navigationId;
-  console.log('completed', completed);
 
   if (component) {
-    return shouldRender ? React.createElement(component, props) : null;
+    return React.createElement(component, { completed, shouldRender }, component.props.children);
   }
 
   if (render) {
-    return shouldRender
-      ? render(props)
-      : null;
+    return render(completed, shouldRender);
   }
 
   if (isChildFunction(children)) {
-    return shouldRender
-      ? children(props)
-      : null;
+    return children(completed, shouldRender, transition);
   }
 
   if (hasChildrenToRender(children)) {
-    return shouldRender
-      ? <StyledCircle current={currentNavigationId} circleSection={navigationId}>
-        { React.Children.only(children) }
-        </StyledCircle>
-      : null;
+    return (
+      <StyledCircle current={currentNavigationId} circleSection={navigationId}>
+        {
+          React.Children.only(
+            React.cloneElement(children, { completed, inProgress: shouldRender, transition }, children.props.children)
+          )
+        }
+      </StyledCircle>
+    );
   }
 
   const inProgressIcon = customInProgressIcon ? customInProgressIcon : HourGlassIcon;

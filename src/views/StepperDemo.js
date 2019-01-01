@@ -28,8 +28,8 @@ import StageFour from '../components/Navigation/Stages/StageFour';
   return CustomLocked;
 };
 */
-
 const StepperDemo = () => {
+  console.log('Navigation', <Navigation />);
   return(
     <Navigation>
         <Navigation.Progress>

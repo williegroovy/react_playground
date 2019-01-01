@@ -2,6 +2,8 @@ import React from "react";
 import { StyledStageContent } from './styledComponents';
 
 import { isChildFunction, hasChildrenToRender, shouldRenderCurrent } from '../../utils/componentHelpers';
+const isFunction = (teste) => typeof teste === 'function';
+
 
 const Step = (props) => {
   const { currentNavigationId, navigationId, transition, component, render, children } = props;
@@ -16,7 +18,7 @@ const Step = (props) => {
   }
 
   if (render) {
-    return shouldRender
+    return shouldRender && isFunction(render)
       ? render(navigationId, currentNavigationId, transition)
       : null;
   }

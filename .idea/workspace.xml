@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b0a7000-366a-41c5-a6cb-b6edb21580b3" name="Default" comment="Adding untracked files.">
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Stages/StageFour.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Stages/StageFour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Stages/StageOne.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Stages/StageOne.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/withCustomTransition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/withCustomTransition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,6 +32,7 @@
           <entry key="js" value="265" />
           <entry key="json" value="9" />
           <entry key="jsx" value="20" />
+          <entry key="md" value="1" />
           <entry key="svg" value="21" />
         </counts>
       </usages-collector>
@@ -43,6 +41,7 @@
           <entry key="JSON" value="9" />
           <entry key="JSX Harmony" value="20" />
           <entry key="JavaScript" value="265" />
+          <entry key="Markdown" value="1" />
           <entry key="SVG" value="21" />
         </counts>
       </usages-collector>
@@ -51,6 +50,7 @@
           <entry key="js" value="78837" />
           <entry key="json" value="402" />
           <entry key="jsx" value="917" />
+          <entry key="md" value="52" />
           <entry key="txt" value="23" />
         </counts>
       </usages-collector>
@@ -59,6 +59,7 @@
           <entry key="JSON" value="402" />
           <entry key="JSX Harmony" value="917" />
           <entry key="JavaScript" value="78837" />
+          <entry key="Markdown" value="52" />
           <entry key="PLAIN_TEXT" value="23" />
         </counts>
       </usages-collector>
@@ -68,14 +69,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Navigation/Navigation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+            <state relative-caret-position="559">
+              <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor>
+                <caret column="49" selection-start-column="49" selection-end-column="49" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -180,7 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/views/Proper/styledComponents.js" />
         <option value="$PROJECT_DIR$/src/views/Proper/ProperWrapper.js" />
         <option value="$PROJECT_DIR$/src/views/Proper/ProperTestComponent.js" />
         <option value="$PROJECT_DIR$/src/Proper/ProperControlPanel.js" />
@@ -231,6 +243,7 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/Stages/StageOne.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Stages/StageFour.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Navigation.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -538,7 +551,7 @@
       <workItem from="1546033830491" duration="25711000" />
       <workItem from="1546208118698" duration="8475000" />
       <workItem from="1546250074011" duration="34000" />
-      <workItem from="1546293567059" duration="19375000" />
+      <workItem from="1546293567059" duration="19579000" />
     </task>
     <task id="LOCAL-00001" summary="Adding new demo routes">
       <created>1540351748011</created>
@@ -590,7 +603,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234710000" />
+    <option name="totallyTimeSpent" value="234914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -659,9 +672,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Adding untracked files." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Proper/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -1007,11 +1017,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/Navigation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+        <state relative-caret-position="559">
+          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor>
+            <caret column="49" selection-start-column="49" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

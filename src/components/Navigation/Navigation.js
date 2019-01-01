@@ -72,7 +72,7 @@ class Navigation extends Component {
     this.onAfterTransition = onAfterTransition;
   };
 
-  resetCustomProperties = () => {
+  resetAllCustomData = () => {
     this.customNavProperties = null;
     this.onBeforeTransition = null;
     this.onAfterTransition = null;
@@ -103,7 +103,7 @@ class Navigation extends Component {
       this.setState({ currentNavigationId: this.state.currentNavigationId - 1 });
     }
 
-    this.resetCustomProperties();
+    this.resetAllCustomData();
   };
 
   state = {
@@ -120,7 +120,6 @@ class Navigation extends Component {
   };
 
   render() {
-  console.log('this.customNavProperties', this.customNavProperties);
     return(
       <NavigationContext.Provider value={this.state}>
         <StyledNavigationContainer>

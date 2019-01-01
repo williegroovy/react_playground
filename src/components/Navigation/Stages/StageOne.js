@@ -12,11 +12,11 @@ const customNavProperties = {
 };
 
 const onBeforeTransition = () => {
-  console.log('onBeforeTransition');
+  console.log('StageOne testing onBeforeTransition');
 };
 
 const onAfterTransition = () => {
-  console.log('onAfterTransition');
+  console.log('StageOne testing onAfterTransition');
 };
 
 export default withCustomTransition({ customNavProperties, onBeforeTransition, onAfterTransition })(StageOne);

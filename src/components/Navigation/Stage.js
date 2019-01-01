@@ -8,7 +8,7 @@ import { hasChildrenToRender, isChildFunction, shouldRenderCurrent } from "../..
 
 const HourGlassIcon = <HourGlass style={{ animationDuration: 0 }} size="30px" />;
 const LockedIcon = (text) => <div><StyledIconImage src={padlock} />{text}</div>;
-const CheckIcon = <img className="animated fadeIn" style={{ width: '12px'}} src={checked} />;
+const CheckIcon = <img alt="Completed" className="animated fadeIn" style={{ width: '12px'}} src={checked} />;
 
 const getIconToRender = (inProgress, completed, inProgressIcon, completedIcon, lockedIcon) => {
     if (inProgress) {
@@ -76,9 +76,3 @@ const Stage = (props) => {
 };
 
 export default Stage;
-
-/*
-  <StyledCircle current={currentNavigationId} circleSection={navigationId}>
-    {renderIcon(currentNavigationId, navigationId)}
-  </StyledCircle>
- */

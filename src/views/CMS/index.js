@@ -52,7 +52,7 @@ class CMS extends React.Component {
             }
         </Menu>
       </Header>
-      <Hero heroImage={images.lookRight || ''} />
+      <Hero heroImage={images.lookRight || ''}>{ title }</Hero>
     </ProperContainer>
     );
   }

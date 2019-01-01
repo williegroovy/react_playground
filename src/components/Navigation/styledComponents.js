@@ -1,4 +1,28 @@
 import styled from "styled-components";
+import { StepNavigationContinueButtonType } from "../Stepper_Example/StepNavigation";
+
+const getButtonColorByType = (type) => {
+  if(type === StepNavigationContinueButtonType.Secondary) {
+    return '#6b6c72';
+  } else if (type === StepNavigationContinueButtonType.Ghost) {
+    return '#fff';
+  } else if(type === 'tertiary') {
+    return 'transparent';
+  } else {
+    return '#05a4b5';
+  }
+};
+
+const getButtonTextColorByType = (type) => {
+ if (type === StepNavigationContinueButtonType.Ghost) {
+    return '#05a4b5';
+  } else if(type === 'tertiary') {
+    return '#6b6c72';
+  } else {
+   // Primary and Secondary have same text color
+    return '#fff';
+  }
+};
 
 export const StyledNavigationContainer = styled.div`
  width: calc(100% - 20px);
@@ -75,6 +99,7 @@ export const StyledButtonStageContainer = styled.div`
   height: 40px;
   padding: 0 10px;
   margin: 20px 10px 10px 0;
+  ${({ hideNavigationUI }) => hideNavigationUI && 'display: none'};
 `;
 
 export const StyledProgressContainer = styled.div`
@@ -112,3 +137,15 @@ export const StyledIconImage = styled.img`
   top: 20px;
   width: 15px;
 `;
+
+export const PrimaryButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+  & button:last-child {
+    margin-left: 20px;
+  }
+`;
+
+export const BackButtonWrapper = styled.div``;

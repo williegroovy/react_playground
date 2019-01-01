@@ -25,6 +25,7 @@ const useProper = (init) => {
 
 export default useProper;
 
+/*
 const properMapNameToProp =   {
   'title': {
     id: 'title',
@@ -47,3 +48,4 @@ const properMapNameToProp =   {
     value: 'black'
   }
 };
+*/

@@ -7,4 +7,16 @@ const StageOne = () => (
   </div>
 );
 
-export default withCustomTransition(() => console.log('Custom Nav From S1'))(StageOne);
+const customNavProperties = {
+  useSecondaryButton: true
+};
+
+const onBeforeTransition = () => {
+  console.log('onBeforeTransition');
+};
+
+const onAfterTransition = () => {
+  console.log('onAfterTransition');
+};
+
+export default withCustomTransition({ customNavProperties, onBeforeTransition, onAfterTransition })(StageOne);

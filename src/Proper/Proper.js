@@ -48,26 +48,3 @@ const Proper = (Wrapped) => (wrappedProps) => {
 };
 
 export default Proper;
-
-const properMapNameToProp =   {
-  'title': {
-    id: 'title',
-    name: 'Title',
-    type: 'input',
-    value: 'Hey WTF man, where you at?'
-  },
-
-  'bgColor': {
-    id: 'bgColor',
-    name: 'BgColor',
-    type: 'input',
-    value: 'pink'
-  },
-
-  'color': {
-    id: 'color',
-    name: 'Color',
-    type: 'input',
-    value: 'black'
-  }
-};

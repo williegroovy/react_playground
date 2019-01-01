@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavigationContext from './NavigationContext';
+import customizableNavProperties from './customizableNavProperties';
 import Progress from './Progress';
 import Steps from './Steps';
 import Step from './Step';
@@ -9,6 +10,19 @@ import { StyledFooter, StyledHeader, StyledNavigationContainer } from './styledC
 const Header = ({ title }) => (<StyledHeader>{title}</StyledHeader>);
 const Footer = ({ title }) => (<StyledFooter>{title}</StyledFooter>);
 
+const defaultNavProperties = {
+  hideNavigationUI: false,
+  hideBackButton: false,
+  backButtonText: '< Back',
+  backButtonType: 'tertiary',
+  hideForwardButton: false,
+  forwardButtonText: 'Continue',
+  forwardButtonType: 'default',
+  useSecondaryButton: false,
+  secondaryButtonType: 'ghost',
+  secondaryButtonText: 'Secondary'
+};
+
 class Navigation extends Component {
   static Progress = Progress;
   static Steps = Steps;
@@ -17,13 +31,70 @@ class Navigation extends Component {
   static Header = Header;
   static Footer = Footer;
 
-  shouldChildAugmentProps = (childType) => (childType === Progress || childType === Steps);
-  shouldGrandChildAugmentProps = (childType) => (childType === Step || childType === Stage);
+  customNavProperties = null;
+  onBeforeTransition = null;
+  onAfterTransition = null;
+
+  shouldSetNavProperties = () =>
+    this.customNavProperties && !this.state.navCustomized && !Object.is(this.customNavProperties, defaultNavProperties);
+
+
+  componentDidMount() {
+    if(this.shouldSetNavProperties()) {
+      this.setNavProperties(this.customNavProperties)
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.currentNavigationId !== this.state.currentNavigationId && this.shouldSetNavProperties()) {
+      this.setNavProperties(this.customNavProperties);
+    }
+  }
+
+  setNavProperties = (navProperties) => {
+    this.setState({
+      navProperties,
+      navCustomized: true
+    })
+  };
+
+  setCustomizableNavProperties = (customProperties) => {
+    this.customNavProperties = Object.entries(customProperties).reduce((accum, [key, value]) => {
+      return customizableNavProperties.hasOwnProperty(key) ? {...accum, [key]: value} : accum;
+    }, defaultNavProperties);
+  };
+
+  setOnBeforeTransition = (onBeforeTransition) => {
+    this.onBeforeTransition = onBeforeTransition;
+  };
+
+  setOnAfterTransition = (onAfterTransition) => {
+    this.onAfterTransition = onAfterTransition;
+  };
+
+  resetCustomProperties = () => {
+    this.customNavProperties = null;
+    this.onBeforeTransition = null;
+    this.onAfterTransition = null;
+
+    this.setState({
+      navProperties: defaultNavProperties,
+      navCustomized: false
+    });
+  };
+
+  registerNavigationSequence = (stageList) => {
+    this.setState({ stageList, stageHasBeenSet: true });
+  };
 
   transition = (direction) => {
     if(typeof this.onBeforeTransition === 'function') {
-      const shouldContinue = this.onBeforeTransition.call(this) || false;
-      if(shouldContinue) return;
+      const shouldContinueTransition = this.onBeforeTransition.call(this) || true;
+      if(!shouldContinueTransition) return;
+    }
+
+    if(typeof this.onAfterTransition === 'function') {
+      this.onAfterTransition.call(this);
     }
 
     if(direction === 'forward') {
@@ -35,30 +106,21 @@ class Navigation extends Component {
     this.resetCustomProperties();
   };
 
-  onBeforeTransition = null;
-
-  setOnBeforeTransition = (onBeforeTransition) => {
-    this.onBeforeTransition = onBeforeTransition;
-  };
-
-  resetCustomProperties = () => {
-    this.onBeforeTransition = null;
-  } ;
-
-  registerNavigationSequence = (stageList) => {
-    this.setState({ stageList, stageHasBeenSet: true });
-  };
-
   state = {
+    navProperties: defaultNavProperties,
+    navCustomized: false,
     navigationSequence: [],
     onRegisterNavigationSequence: this.registerNavigationSequence,
     navigationSequenceRegistered: false,
     currentNavigationId: 1,
+    setCustomizableNavProperties: this.setCustomizableNavProperties,
     setOnBeforeTransition: this.setOnBeforeTransition,
+    setOnAfterTransition: this.setOnAfterTransition,
     transition: this.transition
   };
 
   render() {
+  console.log('this.customNavProperties', this.customNavProperties);
     return(
       <NavigationContext.Provider value={this.state}>
         <StyledNavigationContainer>
@@ -70,8 +132,3 @@ class Navigation extends Component {
 }
 
 export default Navigation;
-
-/*
-  <StepperContext.Provider value={this.state}>
-  </StepperContext.Provider>
- */

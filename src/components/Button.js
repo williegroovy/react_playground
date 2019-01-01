@@ -2,15 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const SButton = styled.button`
+const getButtonBackgroundColorByType = (type) => {
+  if(type === 'secondary') {
+    return '#6b6c72';
+  } else if (type === 'ghost') {
+    return '#fff';
+  } else if(type === 'tertiary') {
+    return 'transparent';
+  } else {
+    return '#6bada7';
+  }
+};
+
+const getButtonTextColorByType = (type) => {
+ if (type === 'ghost') {
+    return '#6bada7';
+  } else if(type === 'tertiary') {
+    return '#6b6c72';
+  } else {
+   // Primary and Secondary have same text color
+    return '#fff';
+  }
+};
+
+const StyledButton = styled.button`
+  width: 120px;
+  background-color: ${({ buttonType }) => getButtonBackgroundColorByType(buttonType)};
   font-family: quicksand;
   font-size: ${({ block }) => block ? 20 : 16 }px;
-  width: 100px;
   font-weight: 500;
-  background: #6bada7;
+  text-align: center;
   border-radius: 4px;
-  border: 0;
-  color: ${({ block }) => block ? 'red' : 'white'};
+  border: ${({ buttonType }) => buttonType === 'ghost' ? '1px solid #6bada7' : 0};
+  color: ${({ buttonType }) => getButtonTextColorByType(buttonType) };
   cursor: pointer;
   padding: 5px 15px 5px 15px;
   
@@ -23,25 +47,27 @@ const SButton = styled.button`
   }
   
   ${({ disabled }) => disabled && `
-    background: #ccc;
-    color: white;
     cursor: not-allowed;
   `};
   
   @keyframes popAnimation {
     50% { transform: scale(1.2)  }
   }
+  
+  ${({ hidden }) => hidden && 'display: none'};
 `;
 
-const Button = ({ children, type='button', onClick, disabled, animated }) => (
-    <SButton
+const Button = ({ children, hidden=false, type='button', buttonType='primary', onClick, disabled, animated }) => (
+    <StyledButton
+      hidden={hidden}
       type={type}
+      buttonType={buttonType}
       onClick={() => onClick && onClick()}
       animated={animated && !disabled}
       disabled={disabled}
     >
       {children}
-    </SButton>
+    </StyledButton>
   );
 
 Button.defaultProps = {

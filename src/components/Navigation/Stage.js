@@ -6,9 +6,9 @@ import padlock from '../../icons/padlock.svg';
 import { StyledCircle, StyledIconImage } from './styledComponents';
 import { hasChildrenToRender, isChildFunction, shouldRenderCurrent } from "../../utils/componentHelpers";
 
-const HourGlassIcon = <HourGlass style={{ animationDuration: 0 }} size="30px" />;
-const LockedIcon = (text) => <div><StyledIconImage src={padlock} />{text}</div>;
-const CheckIcon = <img alt="Completed" className="animated fadeIn" style={{ width: '12px'}} src={checked} />;
+export const HourGlassIcon = <HourGlass data-test-id="inProgressIcon" style={{ animationDuration: 0 }} size="30px" />;
+export const LockedIcon = (text) => <div><StyledIconImage data-test-id="lockedIcon" src={padlock} />{text}</div>;
+export const CheckIcon = <img data-test-id="completedIcon" alt="Completed" className="animated fadeIn" style={{ width: '12px'}} src={checked} />;
 
 const getIconToRender = (inProgress, completed, inProgressIcon, completedIcon, lockedIcon) => {
     if (inProgress) {
@@ -18,6 +18,7 @@ const getIconToRender = (inProgress, completed, inProgressIcon, completedIcon, l
     if (completed) {
       return completedIcon;
     }
+
     return lockedIcon;
 };
 
@@ -39,11 +40,11 @@ const Stage = (props) => {
   const completed = currentNavigationId > navigationId;
 
   if (component) {
-    return React.createElement(component, { completed, shouldRender }, component.props.children);
+    return React.createElement(component, { completed, inProgress: shouldRender });
   }
 
   if (render) {
-    return render(completed, shouldRender);
+    return render(completed, shouldRender, transition);
   }
 
   if (isChildFunction(children)) {
@@ -69,8 +70,8 @@ const Stage = (props) => {
 
   return (
     <StyledCircle current={currentNavigationId} circleSection={navigationId}>
-      { text }
-      { StageIcon }
+      { text && text }
+      {StageIcon}
     </StyledCircle>
   );
 };

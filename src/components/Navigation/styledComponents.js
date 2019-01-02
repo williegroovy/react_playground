@@ -61,6 +61,7 @@ export const StyledFooter = styled.div`
 export const StyledStageContainer = styled.div`
   flex: 1;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   margin: 15px 0 15px 15px;

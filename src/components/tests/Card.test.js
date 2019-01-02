@@ -27,7 +27,6 @@ describe('<Card />', () => {
 
   test('should render children and face correctly' , () => {
     const wrapper = shallow(<Card face={3}>16</Card>);
-    console.log('children', wrapper.props().children);
     expect(wrapper.props().children).toEqual([ 3, '16']);
   });
 });

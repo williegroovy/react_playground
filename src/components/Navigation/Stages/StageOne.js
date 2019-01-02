@@ -2,7 +2,7 @@ import React from 'react';
 import withCustomTransition from '../withCustomTransition';
 
 const StageOne = () => (
-  <div>
+  <div styled={{ width: '100%' }}>
     Stage One in the house
   </div>
 );

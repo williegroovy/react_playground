@@ -72,7 +72,7 @@ const Button = ({ children, hidden=false, type='button', buttonType='primary', o
 
 Button.defaultProps = {
   type: 'button',
-  onClick: false,
+  onClick: null,
   disabled: false,
   animated: false
 };

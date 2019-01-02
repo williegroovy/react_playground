@@ -8,7 +8,7 @@ const Progress = ({ children }) => (
     {
       ({ currentNavigationId, transition }) => (
         isChildFunction(children)
-          ? children(currentNavigationId)
+          ? children(currentNavigationId, transition)
           : <StyledProgressContainer>
             {
               React.Children.map(children, (child) =>

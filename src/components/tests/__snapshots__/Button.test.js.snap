@@ -3,9 +3,14 @@
 exports[`<Button /> should render correctly  1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Button>
+  Symbol(enzyme.__unrendered__): <Button
+    animated={false}
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
     Hey, listen!!!
-</Button>,
+  </Button>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,33 +22,157 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "animated": false,
+      "buttonType": "primary",
       "children": "Hey, listen!!!",
-      "disabled": true,
+      "disabled": false,
+      "hidden": false,
       "onClick": [Function],
       "type": "button",
     },
     "ref": null,
     "rendered": "Hey, listen!!!",
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "
+  width: 120px;
+  background-color: ",
+          [Function],
+          ";
+  font-family: quicksand;
+  font-size: ",
+          [Function],
+          "px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 4px;
+  border: ",
+          [Function],
+          ";
+  color: ",
+          [Function],
+          ";
+  cursor: pointer;
+  padding: 5px 15px 5px 15px;
+  
+  &:hover {
+    ",
+          [Function],
+          ";
+  };
+  
+  &:focus {
+    outline: none;
+  }
+  
+  ",
+          [Function],
+          ";
+  
+  @keyframes popAnimation {
+    50% { transform: scale(1.2)  }
+  }
+  
+  ",
+          [Function],
+          ";
+",
+        ],
+      },
+      "displayName": "styled.button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "button",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "animated": false,
+        "buttonType": "primary",
         "children": "Hey, listen!!!",
-        "disabled": true,
+        "disabled": false,
+        "hidden": false,
         "onClick": [Function],
         "type": "button",
       },
       "ref": null,
       "rendered": "Hey, listen!!!",
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "rules": Array [
+            "
+  width: 120px;
+  background-color: ",
+            [Function],
+            ";
+  font-family: quicksand;
+  font-size: ",
+            [Function],
+            "px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 4px;
+  border: ",
+            [Function],
+            ";
+  color: ",
+            [Function],
+            ";
+  cursor: pointer;
+  padding: 5px 15px 5px 15px;
+  
+  &:hover {
+    ",
+            [Function],
+            ";
+  };
+  
+  &:focus {
+    outline: none;
+  }
+  
+  ",
+            [Function],
+            ";
+  
+  @keyframes popAnimation {
+    50% { transform: scale(1.2)  }
+  }
+  
+  ",
+            [Function],
+            ";
+",
+          ],
+        },
+        "displayName": "styled.button",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "button",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -62,8 +191,6 @@ ShallowWrapper {
         },
       },
     },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
   },
 }
 `;

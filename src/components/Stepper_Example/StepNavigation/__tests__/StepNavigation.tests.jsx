@@ -7,7 +7,7 @@ import { ContinueButton, BackButton, StepNavigationFooter } from '../styledCompo
 const TestComponent = () => <div>I AM TEST</div>;
 const SecondTestComponent = () => <div />;
 
-describe('Navigation component', () => {
+describe.skip('Navigation component', () => {
   it('should not render any elements if no children was provided', () => {
     const component = shallow(<StepNavigation />);
 

@@ -17,7 +17,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "align": undefined,
       "children": Array [
@@ -30,13 +30,43 @@ ShallowWrapper {
       "Total: $",
       "100.00",
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bwzfXH",
+        "isStatic": false,
+        "rules": Array [
+          "
+  ",
+          [Function],
+          "
+",
+          "
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  height: 30px;
+",
+        ],
+      },
+      "displayName": "Styled(styled.div)",
+      "foldedComponentIds": Array [
+        "sc-bdVaJa",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-bwzfXH",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "align": undefined,
         "children": Array [
@@ -49,7 +79,37 @@ ShallowWrapper {
         "Total: $",
         "100.00",
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bwzfXH",
+          "isStatic": false,
+          "rules": Array [
+            "
+  ",
+            [Function],
+            "
+",
+            "
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  height: 30px;
+",
+          ],
+        },
+        "displayName": "Styled(styled.div)",
+        "foldedComponentIds": Array [
+          "sc-bdVaJa",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-bwzfXH",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

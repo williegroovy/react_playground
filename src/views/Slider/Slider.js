@@ -6,14 +6,12 @@ import StageTwo from "../../components/Navigation/Stages/StageTwo";
 import StageThree from "../../components/Navigation/Stages/StageThree";
 import StageFour from "../../components/Navigation/Stages/StageFour";
 
-const circle = (inProgress) => {
+const Circle = ({ inProgress }) => {
   const fill = inProgress ? 'black' : 'transparent';
-  const cxcy = inProgress ? '25' : '15';
-  const r = inProgress ? '20' : '15';
   return (
     <div>
-      <svg height={inProgress ? '50' : '30'} width={inProgress ? '50' : '30'}>
-        <circle cx={cxcy} cy={cxcy} r={r} stroke="black" strokeWidth="3" fill={fill} />
+      <svg height='30' width='30'>
+        <circle cx="15" cy="15" r="13" stroke="black" strokeWidth="3" fill={fill} />
       </svg>
     </div>
   );
@@ -34,29 +32,27 @@ const Slider = () => {
             <Navigation.Step navigationId={3} component={StageThree} />
             <Navigation.Step navigationId={4} component={StageFour} />
           </Navigation.Steps>
-          <div style={{ display: "flex", flexDirection: 'row', width: '150px', justifyContent: 'space-around', marginTop:"-150px"}}>
-            <Navigation.Progress>
-              {
-                (currentNavigationId) => (
-                  <React.Fragment>
-                    <Navigation.Stage navigationId={1}
-                      customInProgressIcon={circle(true)}
-                      customCompletedIcon={circle()}
-                      customLockedIcon={circle()}
-                    />
-                    <Navigation.Stage navigationId={2}
-                      customInProgressIcon={circle(true)}
-                      customCompletedIcon={circle()}
-                      customLockedIcon={circle()}
-                    />
-                    <Navigation.Stage navigationId={3}
-                      customInProgressIcon={circle(true)}
-                      customCompletedIcon={circle()}
-                      customLockedIcon={circle()}
-                    />
-                  </React.Fragment>
-                )
-              }
+          <div style={{
+            display: "flex", flexDirection: 'row', width: '150px',
+            justifyContent: 'space-around', marginTop:"-130px", zIndex: "1"
+          }}>
+            <Navigation.Progress hideUI={true}>
+              <Navigation.Stage
+                navigationId={1}
+                component={Circle}
+              />
+              <Navigation.Stage
+                navigationId={2}
+                customInProgressIcon={<Circle />}
+                customCompletedIcon={<Circle />}
+                customLockedIcon={<Circle />}
+              />
+              <Navigation.Stage
+                navigationId={3}
+                customInProgressIcon={<Circle />}
+                customCompletedIcon={<Circle />}
+                customLockedIcon={<Circle />}
+              />
             </Navigation.Progress>
           </div>
         </div>

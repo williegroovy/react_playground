@@ -134,8 +134,8 @@ export const StyledCircle = styled.div`
 
 export const StyledIconImage = styled.img`
   position: absolute;
-  left: 20px;
-  top: 20px;
+  left: 15px;
+  top: 15px;
   width: 15px;
 `;
 

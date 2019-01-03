@@ -10,69 +10,84 @@ import {
 
 import NavigationContext from './NavigationContext';
 
-const Steps = ({ children }) => (
-  <NavigationContext.Consumer>
-    {
-      ({ navProperties, currentNavigationId, transition }) => {
-        const {
-          hideNavigationUI,
-          hideBackButton,
-          backButtonText,
-          backButtonType,
-          hideForwardButton,
-          forwardButtonText,
-          forwardButtonType,
-          useSecondaryButton,
-          secondaryButtonType,
-          secondaryButtonText
-        } = navProperties;
+//TODO: Button disables are still hard-coded. Need to fix that.
+const Steps = ({ children, hideUI = false }) => {
 
+  const renderChild = (currentNavigationId, transition) => {
+    return (
+      React.Children.map(children, (child) => {
         return (
-          <StyledStageContainer>
-            <StyledStage>
-              {
-                React.Children.map(children, (child) =>
-                  React.cloneElement(child, { currentNavigationId, transition },  child.props.children), this)
-              }
-            </StyledStage>
-            <StyledButtonStageContainer hideNavigationUI={hideNavigationUI}>
-              <BackButtonWrapper>
-                <Button
-                  hidden={hideBackButton}
-                  buttonType={backButtonType}
-                  disabled={currentNavigationId === 1}
-                  onClick={() => transition('back')}
-                >
-                  {backButtonText}
-                </Button>
-              </BackButtonWrapper>
-              <PrimaryButtonsWrapper>
-                <Button
-                  hidden={!useSecondaryButton}
-                  buttonType={secondaryButtonType}
-                  disabled={currentNavigationId === 3}
-                  onClick={() => transition('forward')}
-                  animated
-                >
-                  {secondaryButtonText}
-                </Button>
-                <Button
-                  hidden={hideForwardButton}
-                  buttonType={forwardButtonType}
-                  disabled={currentNavigationId === 4}
-                  onClick={() => transition('forward')}
-                  animated
-                >
-                  {forwardButtonText}
-                </Button>
-              </PrimaryButtonsWrapper>
-            </StyledButtonStageContainer>
-          </StyledStageContainer>
+          React.cloneElement(child, { currentNavigationId, transition },  child.props.children)
         )
+      }, this)
+    )
+  };
+
+  return (
+    <NavigationContext.Consumer>
+      {
+        ({ navProperties, currentNavigationId, transition }) => {
+          const {
+            hideNavigationUI,
+            hideBackButton,
+            backButtonText,
+            backButtonType,
+            hideForwardButton,
+            forwardButtonText,
+            forwardButtonType,
+            useSecondaryButton,
+            secondaryButtonType,
+            secondaryButtonText
+          } = navProperties;
+
+          return (
+            hideUI
+              ? renderChild(currentNavigationId, transition)
+              : <StyledStageContainer>
+                <StyledStage>
+                  {
+                    renderChild(currentNavigationId, transition)
+                  }
+                </StyledStage>
+                <StyledButtonStageContainer hideNavigationUI={hideNavigationUI || hideUI}>
+                  <BackButtonWrapper>
+                    <Button
+                      hidden={hideBackButton}
+                      buttonType={backButtonType}
+                      disabled={currentNavigationId === 1}
+                      onClick={() => transition('back')}
+                    >
+                      {backButtonText}
+                    </Button>
+                  </BackButtonWrapper>
+                  <PrimaryButtonsWrapper>
+                    <Button
+                      hidden={!useSecondaryButton}
+                      buttonType={secondaryButtonType}
+                      disabled={currentNavigationId === 9}
+                      onClick={() => transition('forward')}
+                      animated
+                    >
+                      {secondaryButtonText}
+                    </Button>
+                    <Button
+                      hidden={hideForwardButton}
+                      buttonType={forwardButtonType}
+                      disabled={currentNavigationId === 9}
+                      onClick={() => transition('forward')}
+                      animated
+                    >
+                      {forwardButtonText}
+                    </Button>
+                  </PrimaryButtonsWrapper>
+                </StyledButtonStageContainer>
+              </StyledStageContainer>
+          )
+        }
       }
-    }
-  </NavigationContext.Consumer>
-);
+    </NavigationContext.Consumer>
+  );
+};
 
 export default Steps;
 

@@ -5,10 +5,9 @@ import { isChildFunction, hasChildrenToRender, shouldRenderCurrent } from '../..
 const isFunction = (teste) => typeof teste === 'function';
 
 const Step = (props) => {
-  const { currentNavigationId, navigationId, transition, component, render, children } = props;
+  const { currentNavigationId, navigationId, transition, ids=[], component, render, children } = props;
   const shouldRender = shouldRenderCurrent(currentNavigationId, navigationId);
-
-  const childProps = { currentNavigationId, navigationId, transition };
+  const childProps = { currentNavigationId, navigationId, transition, ids };
 
   if (component) {
     return shouldRender
@@ -21,7 +20,7 @@ const Step = (props) => {
   if (render) {
     if(isFunction(render)) {
       if(shouldRender) {
-        return render(navigationId, currentNavigationId, transition)
+        return render(...Object.values(childProps))
       }
     } else {
       throw "Error: the prop 'render' should only be passed a function";
@@ -32,7 +31,7 @@ const Step = (props) => {
 
   if (isChildFunction(children)) {
     return shouldRender
-      ? children(navigationId, currentNavigationId, transition)
+      ? children(...Object.values(childProps))
       : null;
   }
 

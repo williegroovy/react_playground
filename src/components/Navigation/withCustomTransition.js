@@ -5,12 +5,16 @@ import NavigationContext from './NavigationContext';
 const isFunction = (teste) => typeof teste === 'function';
 const isReactElement = (teste) => isFunction(teste) && React.isValidElement(<teste />);
 
-const applyCustomTransition = ({ customNavProperties, onBeforeTransition, onAfterTransition }) => (
+const applyCustomTransition = ({ customNavProperties, transitionType, onBeforeTransition, onAfterTransition }) => (
   (WrappedComponent) => (
-    ({ setCustomizableNavProperties, setOnBeforeTransition, setOnAfterTransition }) => {
+    ({ setCustomizableNavProperties, setTransitionType, setOnBeforeTransition, setOnAfterTransition }) => {
 
       if(typeof customNavProperties === 'object') {
         setCustomizableNavProperties(customNavProperties)
+      }
+
+      if(typeof transitionType === 'string') {
+        setTransitionType(transitionType);
       }
 
       if (typeof onBeforeTransition === 'function') {

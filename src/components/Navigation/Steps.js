@@ -26,7 +26,7 @@ const Steps = ({ children, hideUI = false }) => {
   return (
     <NavigationContext.Consumer>
       {
-        ({ navProperties, currentNavigationId, transition }) => {
+        ({ navProperties, currentNavigationId, transition, registerNavigationSequence }) => {
           const {
             hideNavigationUI,
             hideBackButton,
@@ -39,6 +39,8 @@ const Steps = ({ children, hideUI = false }) => {
             secondaryButtonType,
             secondaryButtonText
           } = navProperties;
+
+          registerNavigationSequence(children);
 
           return (
             hideUI

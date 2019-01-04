@@ -11,5 +11,10 @@ const customizableNavProperties = {
   secondaryButtonText: 'secondaryButtonText'
 };
 
-export default customizableNavProperties;
+const transitionTypes = {
+  manual: 'manual',
+  auto: 'auto'
+};
+
+export default { customizableNavProperties, transitionTypes };
 

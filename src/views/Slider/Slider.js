@@ -5,6 +5,7 @@ import StageOne from "../../components/Navigation/Stages/StageOne";
 import StageTwo from "../../components/Navigation/Stages/StageTwo";
 import StageThree from "../../components/Navigation/Stages/StageThree";
 import StageFour from "../../components/Navigation/Stages/StageFour";
+import withCustomTransition from "../../components/Navigation/withCustomTransition";
 
 const Circle = ({ inProgress }) => {
   const fill = inProgress ? 'black' : 'transparent';
@@ -19,7 +20,7 @@ const Circle = ({ inProgress }) => {
 
 const Slider = () => {
   return(
-    <Navigation>
+    <Navigation transitionType={{ transitionType: "auto", delay: 3000 }}>
         <div style={{
           display: "flex", flexDirection: "column", minWidth: '100%',
           width: '100%', alignItems: 'center', height: '90vh'
@@ -60,4 +61,4 @@ const Slider = () => {
   );
 };
 
-export default Slider
+export default Slider;

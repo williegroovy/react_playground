@@ -7,14 +7,11 @@ const isReactElement = (teste) => isFunction(teste) && React.isValidElement(<tes
 
 const applyCustomTransition = ({ customNavProperties, transitionType, onBeforeTransition, onAfterTransition }) => (
   (WrappedComponent) => (
-    ({ setCustomizableNavProperties, setTransitionType, setOnBeforeTransition, setOnAfterTransition }) => {
+    (props) => {
+      const { setCustomizableNavProperties, setOnBeforeTransition, setOnAfterTransition } = props;
 
       if(typeof customNavProperties === 'object') {
         setCustomizableNavProperties(customNavProperties)
-      }
-
-      if(typeof transitionType === 'string') {
-        setTransitionType(transitionType);
       }
 
       if (typeof onBeforeTransition === 'function') {

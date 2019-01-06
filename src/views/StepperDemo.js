@@ -70,13 +70,9 @@ const StepperDemo = () => {
   return(
     <Navigation>
         <Navigation.Progress>
-          <Navigation.Stage navigationId={1}>
-            <WrappedIcon />
-          </Navigation.Stage>
-          <Navigation.Stage navigationId={2} customCompletedIcon={CustomCompleted} />
-          <Navigation.Stage navigationId={3}>
-            <WrappedIcon />
-          </Navigation.Stage>
+          <Navigation.Stage navigationId={1} />
+          <Navigation.Stage navigationId={2} />
+          <Navigation.Stage navigationId={3} />
         </Navigation.Progress>
         <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <Navigation.Header title="Stepper Header" />

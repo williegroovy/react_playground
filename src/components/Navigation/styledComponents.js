@@ -69,14 +69,13 @@ export const StyledStageContainer = styled.div`
   border-radius: 8px;
 `;
 
-export const StyledStageContent = styled.div`
+export const StyledStepContent = styled.div`
   display: flex;
-  margin: 10px
+  margin: 10px;
   border-radius: 8px;
   width: 100%;
   height: 100%;
   background: #eee;
-  position: absolute;
   justify-content: center;
   align-items: center;
   font-size: 40px;
@@ -84,12 +83,11 @@ export const StyledStageContent = styled.div`
   font-weight: 700;
 `;
 
-export const StyledStage = styled.div`
+export const StyledStep = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
-  position: relative;
   border-radius: 8px;
   width: calc(100% - 20px);
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../Button';
 import {
   StyledStageContainer,
-  StyledStage,
+  StyledStep,
   StyledButtonStageContainer,
   PrimaryButtonsWrapper,
   BackButtonWrapper
@@ -46,11 +46,11 @@ const Steps = ({ children, hideUI = false }) => {
             hideUI
               ? renderChild(currentNavigationId, transition)
               : <StyledStageContainer>
-                <StyledStage>
+                <StyledStep>
                   {
                     renderChild(currentNavigationId, transition)
                   }
-                </StyledStage>
+                </StyledStep>
                 <StyledButtonStageContainer hideNavigationUI={hideNavigationUI || hideUI}>
                   <BackButtonWrapper>
                     <Button

@@ -67,15 +67,15 @@ class Navigation extends Component {
     }
 
     if(this.props.transitionType) {
-      const { transitionType, delay } = this.props.transitionType;
-      this.setTransitionType(transitionType, delay);
+      this.handleTransitionType(this.props.transitionType);
     }
 
-    //if(this.navigationSequence) {
-    //  const navigationSequence = [...this.navigationSequence];
-    //  this.setState({ navigationSequence });
-    //  this.navigationSequence = null;
-    //}
+    if(this.navigationSequence) {
+     const navigationSequence = [...this.navigationSequence];
+
+     this.setState({ navigationSequence });
+     this.navigationSequence = null;
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -108,17 +108,28 @@ class Navigation extends Component {
     }, defaultNavProperties);
   };
 
-  setTransitionType = (customTransitionType, args) => {
-    const { delay } = args;
+  handleTransitionType = () => {
+    const { transitionType } = this.props;
 
-    if (transitionTypes.hasOwnProperty(customTransitionType)) {
-      this.setState({
-        transitionType: customTransitionType,
-        transitionTypeCustomized: true
-      })
+    if (typeof transitionType === 'object') {
+      if (transitionType.hasOwnProperty('type')) {
+        this.setTransitionType(transitionType);
+      }
     }
+  };
 
-    this.setTransitionInterval(delay);
+  setTransitionType = ({ type, delay }) => {
+
+    if (transitionTypes.hasOwnProperty(type)) {
+      this.setState({
+        transitionType: type,
+        transitionTypeCustomized: true
+      });
+
+      if (type === transitionTypes.auto) {
+        this.setTransitionInterval(delay);
+      }
+    }
   };
 
   setOnBeforeTransition = (onBeforeTransition) => {
@@ -141,18 +152,22 @@ class Navigation extends Component {
       navCustomized: false,
       transitionTypeCustomized: false
     });
-
-    //transitionType: 'navigation',
   };
 
   onRegisterNavigationSequence = (rawNavigationSequence) => {
-    this.navigationSequence = rawNavigationSequence.map(child => child.props.navigationId);
+    // Set this.navigationSequence an array to child navigationIds
+    if(!this.navigationSequence) {
+      this.navigationSequence = rawNavigationSequence.map(child => {
+        if (child.type.name === 'Step' && child.props.navigationId) {
+          return child.props.navigationId;
+        }
+      });
+    }
   };
 
   transitionAdvanced = (nextCurrentNavId) => {
     const { transitionType, navigationSequence } = this.state;
 
-    debugger;
     if(typeof this.onBeforeTransition === 'function') {
       const shouldContinueTransition = this.onBeforeTransition.call(this) || true;
       if(!shouldContinueTransition) return;

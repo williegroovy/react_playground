@@ -5,9 +5,10 @@ import NavigationContext from './NavigationContext';
 const isFunction = (teste) => typeof teste === 'function';
 const isReactElement = (teste) => isFunction(teste) && React.isValidElement(<teste />);
 
-const applyCustomTransition = ({ customNavProperties, onBeforeTransition, onAfterTransition }) => (
+const applyCustomTransition = ({ customNavProperties, transitionType, onBeforeTransition, onAfterTransition }) => (
   (WrappedComponent) => (
-    ({ setCustomizableNavProperties, setOnBeforeTransition, setOnAfterTransition }) => {
+    (props) => {
+      const { setCustomizableNavProperties, setOnBeforeTransition, setOnAfterTransition } = props;
 
       if(typeof customNavProperties === 'object') {
         setCustomizableNavProperties(customNavProperties)

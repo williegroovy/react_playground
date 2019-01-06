@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledStageContent } from './styledComponents';
+import { StyledStepContent } from './styledComponents';
 
 import { isChildFunction, hasChildrenToRender, shouldRenderCurrent } from '../../utils/componentHelpers';
 const isFunction = (teste) => typeof teste === 'function';
@@ -11,9 +11,9 @@ const Step = (props) => {
 
   if (component) {
     return shouldRender
-      ? <StyledStageContent key={navigationId}>
+      ? <StyledStepContent key={navigationId}>
           {React.createElement(component, childProps)}
-        </StyledStageContent>
+        </StyledStepContent>
       : null;
   }
 
@@ -37,9 +37,9 @@ const Step = (props) => {
 
   if (hasChildrenToRender(children)) {
     return shouldRender
-      ? <StyledStageContent key={navigationId}>
+      ? <StyledStepContent key={navigationId}>
         { React.Children.only(React.cloneElement(children, childProps, children.props.children)) }
-        </StyledStageContent>
+        </StyledStepContent>
       : null;
   }
 

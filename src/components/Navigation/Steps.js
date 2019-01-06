@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../Button';
 import {
   StyledStageContainer,
-  StyledStage,
+  StyledStep,
   StyledButtonStageContainer,
   PrimaryButtonsWrapper,
   BackButtonWrapper
@@ -26,7 +26,7 @@ const Steps = ({ children, hideUI = false }) => {
   return (
     <NavigationContext.Consumer>
       {
-        ({ navProperties, currentNavigationId, transition }) => {
+        ({ navProperties, currentNavigationId, transition, registerNavigationSequence }) => {
           const {
             hideNavigationUI,
             hideBackButton,
@@ -40,15 +40,17 @@ const Steps = ({ children, hideUI = false }) => {
             secondaryButtonText
           } = navProperties;
 
+          registerNavigationSequence(children);
+
           return (
             hideUI
               ? renderChild(currentNavigationId, transition)
               : <StyledStageContainer>
-                <StyledStage>
+                <StyledStep>
                   {
                     renderChild(currentNavigationId, transition)
                   }
-                </StyledStage>
+                </StyledStep>
                 <StyledButtonStageContainer hideNavigationUI={hideNavigationUI || hideUI}>
                   <BackButtonWrapper>
                     <Button

@@ -5,7 +5,7 @@ import Stage, { HourGlassIcon, LockedIcon, CheckIcon } from '../Stage';
 
 import padlock from "../../../icons/padlock.svg";
 import clock from '../../../icons/clock.svg';
-import { StyledCircle, StyledIconImage, StyledStageContent } from '../styledComponents';
+import { StyledCircle, StyledIconImage, StyledStepContent } from '../styledComponents';
 import Navigation from "../index";
 import Step from "../Step";
 
@@ -119,7 +119,7 @@ describe('Navigation -> Stage Component', () => {
 
           expect(component.exists()).toEqual(true);
 
-          const stageContent = component.find(StyledStageContent);
+          const stageContent = component.find(StyledStepContent);
           expect(stageContent.exists()).toEqual(false);
 
           const testChild = component.find(TestComponent);
@@ -145,7 +145,7 @@ describe('Navigation -> Stage Component', () => {
 
           expect(component.exists()).toEqual(true);
 
-          const stageContent = component.find(StyledStageContent);
+          const stageContent = component.find(StyledStepContent);
           expect(stageContent.exists()).toEqual(false);
 
           const [completed, shouldRender, transition] = props;
@@ -173,7 +173,7 @@ describe('Navigation -> Stage Component', () => {
 
           expect(component.exists()).toEqual(true);
 
-          const stageContent = component.find(StyledStageContent);
+          const stageContent = component.find(StyledStepContent);
           expect(stageContent.exists()).toEqual(false);
 
           const testChild = component.find(TestComponent);
@@ -189,7 +189,7 @@ describe('Navigation -> Stage Component', () => {
 
           expect(component.exists()).toEqual(true);
 
-          const stageContent = component.find(StyledStageContent);
+          const stageContent = component.find(StyledStepContent);
           expect(stageContent.exists()).toEqual(true);
 
           const testComponent = component.find(TestComponent);
@@ -203,7 +203,7 @@ describe('Navigation -> Stage Component', () => {
 
           expect(component.exists()).toEqual(true);
 
-          const stageContent = component.find(StyledStageContent);
+          const stageContent = component.find(StyledStepContent);
           expect(stageContent.exists()).toEqual(true);
 
           const testChild = component.find(TestComponent);
@@ -244,7 +244,7 @@ describe('Navigation -> Stage Component', () => {
 
         expect(component.exists()).toEqual(true);
 
-        const stageContent = component.find(StyledStageContent);
+        const stageContent = component.find(StyledStepContent);
         expect(stageContent.exists()).toEqual(false);
 
         const testChild = component.find(TestComponent);

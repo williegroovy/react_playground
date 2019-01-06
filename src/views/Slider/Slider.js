@@ -4,7 +4,6 @@ import Navigation from "../../components/Navigation";
 import StageOne from "../../components/Navigation/Stages/StageOne";
 import StageTwo from "../../components/Navigation/Stages/StageTwo";
 import StageThree from "../../components/Navigation/Stages/StageThree";
-import StageFour from "../../components/Navigation/Stages/StageFour";
 
 const Circle = ({ inProgress }) => {
   const fill = inProgress ? 'black' : 'transparent';
@@ -17,47 +16,57 @@ const Circle = ({ inProgress }) => {
   );
 };
 
+const CarouselProgressWrapper = styled.div`
+  display: flex;
+  margin-top: -50px;
+  justify-content: space-around;
+  
+  div {
+    margin-left: 5px;
+  }
+    
+  div:first-child {
+    margin-left: 0;
+  }
+`;
+
+
 const Slider = () => {
   return(
-    <Navigation>
-        <div style={{
-          display: "flex", flexDirection: "column", minWidth: '100%',
-          width: '100%', alignItems: 'center', height: '90vh'
-        }}>
-          <Navigation.Steps>
-            <Navigation.Step navigationId={1}>
-              <StageOne />
-            </Navigation.Step>
-            <Navigation.Step navigationId={2} component={StageTwo} />
-            <Navigation.Step navigationId={3} component={StageThree} />
-            <Navigation.Step navigationId={4} component={StageFour} />
-          </Navigation.Steps>
-          <div style={{
-            display: "flex", flexDirection: 'row', width: '150px',
-            justifyContent: 'space-around', marginTop:"-130px", zIndex: "1"
-          }}>
-            <Navigation.Progress hideUI={true}>
-              <Navigation.Stage
-                navigationId={1}
-                component={Circle}
-              />
-              <Navigation.Stage
-                navigationId={2}
-                customInProgressIcon={<Circle />}
-                customCompletedIcon={<Circle />}
-                customLockedIcon={<Circle />}
-              />
-              <Navigation.Stage
-                navigationId={3}
-                customInProgressIcon={<Circle />}
-                customCompletedIcon={<Circle />}
-                customLockedIcon={<Circle />}
-              />
-            </Navigation.Progress>
-          </div>
-        </div>
+    <Navigation transitionType={{ type: 'auto', delay: 3000 }}>
+      <div style={{ display: "flex", flexDirection: "column", margin: '0 auto', width: '75%', alignItems: 'center', height: '500px' }}>
+        <Navigation.Steps hideUI={true}>
+          <Navigation.Step navigationId={1}>
+            <StageOne />
+          </Navigation.Step>
+          <Navigation.Step navigationId={2} component={StageTwo} />
+          <Navigation.Step navigationId={3} component={StageThree} />
+        </Navigation.Steps>
+
+        <CarouselProgressWrapper>
+          <Navigation.Progress hideUI={true}>
+            <Navigation.Stage
+              navigationId={1}
+              component={Circle}
+            />
+            <Navigation.Stage
+              navigationId={2}
+              customInProgressIcon={<Circle />}
+              customCompletedIcon={<Circle />}
+              customLockedIcon={<Circle />}
+            />
+            <Navigation.Stage
+              navigationId={3}
+              customInProgressIcon={<Circle />}
+              customCompletedIcon={<Circle />}
+              customLockedIcon={<Circle />}
+            />
+          </Navigation.Progress>
+        </CarouselProgressWrapper>
+      </div>
     </Navigation>
   );
 };
 
-export default Slider
+
+export default Slider;

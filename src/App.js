@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import LoadingComponent from './components/LoadingComponent';
 import GlobalStyle from './createGlobalStyles';
+import { FriendsContextProvider } from './views/hooks/FriendsContext';
 
 const AsyncHome = Loadable({ loader: () => import('./views/Home'), loading: LoadingComponent });
 const AsyncStepperDemo = Loadable({ loader: () => import('./views/StepperDemo'), loading: LoadingComponent });
@@ -15,6 +16,8 @@ const AsyncDynamic  = Loadable({ loader: () => import('./views/Dynamic'), loadin
 const AsyncPreview = Loadable({ loader: () => import('./views/Preview'), loading: LoadingComponent });
 const AsyncCMS = Loadable({ loader: () => import('./views/CMS'), loading: LoadingComponent });
 const AsyncProper = Loadable({ loader: () => import('./views/Proper'), loading: LoadingComponent });
+const AsyncHooks = Loadable({ loader: () => import('./views/hooks'), loading: LoadingComponent });
+
 
 const AsyncExplainWhy = Loadable({ loader: () => import('./views/ExplainWhy/ExplainWhy'), loading: LoadingComponent });
 
@@ -23,22 +26,25 @@ class App extends Component {
     return (
       <React.Fragment>
         <GlobalStyle />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={AsyncHome} />
-            <Route path="/stepper" component={AsyncStepperDemo} />
-            <Route path="/slider" component={AsyncSliderDemo} />
-            <Route path="/stepNavigation" component={AsyncStepNavigationDemo} />
-            <Route path="/memory" component={AsyncMemoryGame} />
-            <Route path="/cart" component={AsyncCheckout} />
-            <Route path="/dnd" component={AsyncDragAndDrop} />
-            <Route path="/dynamic" component={AsyncDynamic} />
-            <Route path="/preview" component={AsyncPreview} />
-            <Route path="/cms" component={AsyncCMS} />
-            <Route path="/explainwhy" component={AsyncExplainWhy} />
-            <Route path="/proper" component={AsyncProper} />
-          </Switch>
-        </Router>
+        <FriendsContextProvider friends={{}} selectedFriend={null}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={AsyncHome} />
+              <Route path="/stepper" component={AsyncStepperDemo} />
+              <Route path="/slider" component={AsyncSliderDemo} />
+              <Route path="/stepNavigation" component={AsyncStepNavigationDemo} />
+              <Route path="/memory" component={AsyncMemoryGame} />
+              <Route path="/cart" component={AsyncCheckout} />
+              <Route path="/dnd" component={AsyncDragAndDrop} />
+              <Route path="/dynamic" component={AsyncDynamic} />
+              <Route path="/preview" component={AsyncPreview} />
+              <Route path="/cms" component={AsyncCMS} />
+              <Route path="/explainwhy" component={AsyncExplainWhy} />
+              <Route path="/proper" component={AsyncProper} />
+              <Route path="/hooks" component={AsyncHooks} />
+            </Switch>
+          </Router>
+        </FriendsContextProvider>
       </React.Fragment>
 
     );

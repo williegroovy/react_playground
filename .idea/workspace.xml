@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b0a7000-366a-41c5-a6cb-b6edb21580b3" name="Default" comment="Adding untracked files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,23 +15,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Functional/CombiningFunctions.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            <state relative-caret-position="130">
+              <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Functional/GettingStarted.js">
+        <entry file="file://$PROJECT_DIR$/src/animations/HourGlass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="57">
+              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/animations/morphPen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -73,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/Stepper/index.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Stages/index.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Stages/StageThree.js" />
         <option value="$PROJECT_DIR$/src/utils/ComponentUtils.js" />
@@ -124,6 +126,7 @@
         <option value="$PROJECT_DIR$/src/views/hooks/index.js" />
         <option value="$PROJECT_DIR$/src/JS_Design_Patterns/Functional/GettingStarted.js" />
         <option value="$PROJECT_DIR$/src/JS_Design_Patterns/Functional/CombiningFunctions.js" />
+        <option value="$PROJECT_DIR$/src/animations/morphPen.js" />
       </list>
     </option>
   </component>
@@ -141,9 +144,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="909" />
-    <option name="height" value="972" />
+    <option name="x" value="52" />
+    <option name="y" value="23" />
+    <option name="width" value="1253" />
+    <option name="height" value="963" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -169,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,27 +190,24 @@
               <item name="react_playground" type="b2602c69:ProjectViewProjectNode" />
               <item name="react_playground" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="JS_Design_Patterns" type="462c0819:PsiDirectoryNode" />
+              <item name="animations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react_playground" type="b2602c69:ProjectViewProjectNode" />
               <item name="react_playground" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="JS_Design_Patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Functional" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react_playground" type="b2602c69:ProjectViewProjectNode" />
               <item name="react_playground" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="JS_Design_Patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Structural" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -214,7 +216,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Functional" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -290,7 +292,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="&lt;DecisionTree /&gt;.should render correctly " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="&lt;DecisionTree /&gt;.should render correctly " type="JavaScriptTestRunnerJest" temporary="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -408,7 +410,10 @@
       <workItem from="1546494416842" duration="489000" />
       <workItem from="1546582941429" duration="5269000" />
       <workItem from="1554443238359" duration="3012000" />
-      <workItem from="1564273784492" duration="15310000" />
+      <workItem from="1564273784492" duration="16672000" />
+      <workItem from="1564505041442" duration="350000" />
+      <workItem from="1571347611034" duration="135000" />
+      <workItem from="1571505096669" duration="1443000" />
     </task>
     <task id="LOCAL-00001" summary="Adding new demo routes">
       <created>1540351748011</created>
@@ -467,7 +472,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299318000" />
+    <option name="totallyTimeSpent" value="302608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,10 +484,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="909" height="972" extended-state="0" />
-    <editor active="true" />
+    <frame x="52" y="236" width="1253" height="963" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49882904" visible="true" weight="0.20945945" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49882904" visible="true" weight="0.20048702" />
       <window_info id="Structure" order="1" sideWeight="0.50117093" side_tool="true" weight="0.19457957" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -494,9 +498,9 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32951757" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" weight="0.32951757" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.28704783" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18632075" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.15076183" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.1505251" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3292978" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -533,16 +537,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Adding untracked files." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Stepper_Example/StepNavigation/withCustomNavigation.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/Stepper_Example/StepNavigation/customizableProperties.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Stages/StageTwo.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Stages/StageThree.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Stepper_Example/StepNavigation/StepNavigation.jsx" />
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/src/components/Stepper_Example/StepNavigation/__tests__/StepNavigation.tests.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/Card.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/tests/Card.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="668">
@@ -564,7 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/StepNavigationDemo.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/tests/Stage.test.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/tests/Step.test.js" />
     <entry file="file://$PROJECT_DIR$/src/views/Slider/index.js" />
@@ -575,14 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/animations/HourGlass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/decisionTree.js" />
     <entry file="file://$PROJECT_DIR$/src/views/ExplainWhy/ExplainWhy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
@@ -591,22 +576,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/Stages/StageFour.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Navigation/customizableProperties.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Stages/StageOne.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/Steps.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/withCustomTransition.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/styledComponents.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/Progress.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/Stage.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/Step.js" />
-    <entry file="file://$PROJECT_DIR$/src/views/Slider/Slider.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Navigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="134" column="51" selection-start-line="134" selection-start-column="51" selection-end-line="134" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/StepperDemo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -614,27 +589,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Functional/secondaryFunctional.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Functional/addSecondary.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Functional/addToNumber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Functional/secondaryFunctional.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/Functional/addSecondary.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/Functional/addToNumber.js" />
     <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Creational/Singleton.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
@@ -651,16 +608,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Functional/log.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Functional/functional.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Functional/log.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/Functional/functional.js" />
     <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Creational/Prototype.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -670,34 +619,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/hooks/useLog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/hooks/useFunctional.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/hooks/styledComponents.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/hooks/useLog.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/hooks/useFunctional.js" />
+    <entry file="file://$PROJECT_DIR$/src/views/hooks/styledComponents.js" />
     <entry file="file://$PROJECT_DIR$/src/views/hooks/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -743,20 +667,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Functional/GettingStarted.js">
+    <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Functional/CombiningFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="240">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Functional/CombiningFunctions.js">
+    <entry file="file://$PROJECT_DIR$/src/JS_Design_Patterns/Functional/GettingStarted.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        <state relative-caret-position="260">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigation/NavigationContext.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Navigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1947">
+          <caret line="134" column="51" selection-start-line="134" selection-start-column="51" selection-end-line="134" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AsyncComponent.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Stages/StageOne.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/MemoryGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-287" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/StepNavigationDemo.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Slider/Slider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-615" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/decisionTree.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/componentHelpers.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigation/customizableProperties.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/List/styled-components.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/DecisionTree.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proper/ProperControlPanel.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animations/HourGlass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animations/morphPen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>

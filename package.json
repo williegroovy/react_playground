@@ -6,7 +6,7 @@
     "aws-sdk": "^2.360.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
-    "gsap": "^1.20.6",
+    "gsap": "^3.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
